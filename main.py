@@ -32,36 +32,38 @@ if __name__=="__main__":
         opcion=menu()
 
         if opcion == 1:
-            print("Ingresar numero de viajero")
+           print("Ingresar numero de viajero")
             numero=int(input())
-            for indice in range(len(lista)):
-                if(numero==lista[indice].getnum_viajero()):
-                    print("La cantidad de millas es:", lista[indice].cantidadTotalMillas())
+            i=0
+            while i< len(lista) and numero!= lista[i].getnum_viajero():
+                i+=1
+            if i<=len(lista):
+                print("La cantidad de millas es:", lista[i].cantidadTotalMillas())
 
 
 
         if opcion==2:
             print("Ingresar numero de viajero")
             numero=int(input())
-            for indice in range(len(lista)):
-                if(numero==lista[indice].getnum_viajero()):
-                    print("Ingrese millas recorridas:")
-                    mill=int(input())
-                    lista[indice].acumularMillas(mill)
-                    print("Millas actualizadas:",lista[indice].cantidadTotalMillas())
+            i=0
+            while i< len(lista) and numero!= lista[i].getnum_viajero():
+                i+=1
+            if i<=len(lista):
+                    mill=int(input("Ingresar cantidad de millas para acumular"))
+                    lista[i].acumularMillas(mill)
+                    print("Millas actualizadas:",lista[i].cantidadTotalMillas())
 
 
         if opcion == 3:
             print("Ingresar numero de viajero")
             numero=int(input())
-            for indice in range(len(lista)):
-                if(numero==lista[indice].getnum_viajero()):
-                    print("Ingrese cantidad de millas para canjear:")
-                    canjear=int(input())
-                    lista[indice].canjearMillas(canjear)
-                    print("Millas actualizadas, con canje realizado:",lista[indice].cantidadTotalMillas())
-
-
+            i=0
+            while i< len(lista) and numero!= lista[i].getnum_viajero():
+                i+=1
+            if i<=len(lista):
+                    canjear=int(input("Ingresar cantidad de millas para canjear"))
+                    lista[i].canjearMillas(canjear)
+                    print("Millas actualizadas, con canje realizado:",lista[i].cantidadTotalMillas())
 
 
 
